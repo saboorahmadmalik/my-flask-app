@@ -138,3 +138,147 @@ p {
     border: 3px solid #38bdf8; /* blue accent border */
     margin-bottom: 20px;
 }
+
+/* ===== SKILLS PAGE ===== */
+.skills-section {
+    margin-bottom: 35px; /* spacing between each category (Languages, Tools, etc.) */
+}
+
+.skills-section h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;   /* badges wrap to next line if they don't fit */
+    gap: 12px;
+}
+
+/* Each individual skill badge/tag */
+.skill-badge {
+    background-color: rgba(56, 189, 248, 0.15); /* light blue, semi-transparent */
+    color: #38bdf8;
+    padding: 8px 16px;
+    border-radius: 20px;             /* rounded pill shape */
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid #38bdf8;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* smooth hover effect */
+}
+
+/* Badge lifts slightly and brightens on hover */
+.skill-badge:hover {
+    background-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-3px);
+}
+/* ===== SKILLS PAGE ===== */
+.skills-section {
+    margin-bottom: 35px;
+}
+
+/* Heading stays the same blue accent as every other page's h1/h3 */
+.skills-section h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Badge text is now white, background is a subtle dark box - clearly different from the heading */
+.skill-badge {
+    background-color: rgba(255, 255, 255, 0.08); /* barely-there white tint, distinct from heading color */
+    color: #ffffff;                                /* white text inside badges */
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-badge:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-3px);
+}
+
+/* ===== EDUCATION PAGE ===== */
+.education-card {
+    background-color: rgba(30, 41, 59, 0.85); /* same card style as project cards, keeps design consistent */
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+    border-left: 4px solid #38bdf8; /* accent stripe on the left, common for timeline/education entries */
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateX(5px); /* subtle shift on hover, feels interactive */
+}
+
+.education-card h3 {
+    color: #38bdf8;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+}
+
+.edu-institution {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.edu-duration {
+    font-size: 0.95rem;
+    color: #94a3b8; /* muted gray, since this is secondary info (dates) */
+}
+
+/* Description text inside the education card */
+.edu-description {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-card {
+    background-color: rgba(30, 41, 59, 0.85);
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* thin divider line between each item */
+}
+
+.contact-item:last-child {
+    border-bottom: none; /* removes divider after the last item */
+}
+
+.contact-label {
+    font-weight: 600;
+    color: #38bdf8;
+    min-width: 80px; /* keeps labels aligned */
+}
+
+.contact-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #38bdf8;
+}

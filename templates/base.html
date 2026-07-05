@@ -1,35 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Each child page can override this title using {% block title %} -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Each child page can override this title -->
     <title>{% block title %}My Portfolio{% endblock %}</title>
 
     <!-- Link to our custom CSS file, which lives in the 'static' folder -->
     <!-- url_for() generates the correct path automatically, so we never hardcode it -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
     <!-- ===== NAVBAR (appears on every page) ===== -->
     <nav class="navbar">
-        <div class="nav-logo">My Portfolio</div>
+      <div class="nav-logo">My Portfolio</div>
 
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/skills">Skills</a></li>
-            <li><a href="/education">Education</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/skills">Skills</a></li>
+        <li><a href="/education">Education</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <!-- {% block content %} is a placeholder -->
+    <!-- This content block is a placeholder -->
     <!-- Each page (home.html, projects.html, etc.) will fill this in with its own content -->
-    <main class="content">
-        {% block content %}{% endblock %}
-    </main>
-
-</body>
+    <main class="content">{% block content %}{% endblock %}</main>
+  </body>
 </html>

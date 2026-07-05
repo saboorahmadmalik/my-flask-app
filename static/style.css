@@ -1,0 +1,140 @@
+/* ===== RESET & BASE STYLES ===== */
+/* This removes default browser spacing so we have full control over layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* makes width/height math predictable when we add padding/borders */
+}
+
+/* ===== BACKGROUND WITH OVERLAY FOR READABILITY ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #e2e8f0;
+    line-height: 1.6;
+    position: relative; /* needed so the overlay can position correctly */
+}
+
+/* This pseudo-element places the background image behind everything */
+body::before {
+    content: '';
+    position: fixed;   /* stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg');  /* site-wide background photo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2; /* pushes image behind everything */
+}
+
+/* This adds a dark tint on top of the background image, behind the text */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.75); /* dark navy, 75% opacity */
+    z-index: -1; /* sits above image, below actual content */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;                    /* lays out logo and links side-by-side */
+    justify-content: space-between;   /* pushes logo to left, links to right */
+    align-items: center;              /* vertically centers everything */
+    padding: 20px 40px;
+    background-color: #1e293b;        /* slightly lighter than body background */
+    position: sticky;                 /* navbar stays visible even when scrolling down */
+    top: 0;
+    z-index: 100;                     /* keeps navbar above other content */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* subtle shadow under navbar */
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #38bdf8; /* light blue accent color */
+}
+
+.nav-links {
+    list-style: none;  /* removes bullet points from <li> */
+    display: flex;      /* lays out links horizontally instead of stacked */
+    gap: 25px;          /* spacing between each link */
+}
+
+/* ===== NAVBAR LINK ANIMATION ===== */
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;   /* removes underline */
+    font-weight: 500;
+    position: relative;      /* needed so the ::after underline positions correctly */
+    transition: color 0.3s ease; /* smooth color change when hovering */
+}
+
+/* This creates an invisible underline that we'll animate on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;                     /* starts with no width - invisible */
+    height: 2px;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;   /* smoothly grows when hovered */
+}
+
+.nav-links a:hover {
+    color: #38bdf8; /* text turns light blue on hover */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* underline grows to full width on hover */
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.content {
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: 0 auto;              /* centers the content box horizontally on the page */
+    animation: fadeIn 1s ease-in; /* content fades in smoothly when the page loads */
+    position: relative;          /* ensures content stays above the background layers */
+    z-index: 1;
+}
+
+/* Defines what the "fadeIn" animation actually does */
+@keyframes fadeIn {
+    from {
+        opacity: 0;                 /* starts invisible */
+        transform: translateY(20px); /* starts slightly lower */
+    }
+    to {
+        opacity: 1;                 /* fades to fully visible */
+        transform: translateY(0);   /* moves up to its normal position */
+    }
+}
+
+/* ===== HEADINGS & TEXT ===== */
+h1 {
+    font-size: 2.5rem;
+    color: #38bdf8;      /* accent blue color for main headings */
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #cbd5e1;      /* slightly muted light gray for paragraph text */
+}
+
+/* ===== PROFILE PICTURE ===== */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;       /* makes it a perfect circle */
+    object-fit: cover;        /* crops image nicely without stretching */
+    border: 3px solid #38bdf8; /* blue accent border */
+    margin-bottom: 20px;
+}

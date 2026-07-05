@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<!-- Profile image -->
+<img
+  src="{{ url_for('static', filename='profile.jpg') }}"
+  alt="Saboor Ahmad Malik"
+  class="profile-pic"
+/>
+<h1>Hi, I'm Saboor Ahmad Malik 👋</h1>
+<p>
+  I'm a Computer Science / Software student passionate about building web
+  applications and solving real-world problems with code. Welcome to my
+  portfolio!
+</p>
+{% endblock %}
